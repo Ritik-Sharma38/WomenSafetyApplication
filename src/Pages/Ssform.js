@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet,StatusBar,TextInput,TouchableOpacity} from 'react-native';
-
+import {Actions} from 'react-native-router-flux';
 export default class Logo extends Component<{}> {
 	   _call(){
   alert('Server Not Found ERROR 404');

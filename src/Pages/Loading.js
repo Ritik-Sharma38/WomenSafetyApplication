@@ -44,7 +44,7 @@ export default class Loading extends React.Component {
   }
 
   call2(){
-    Actions.fpg()
+    Actions.startpage()
   }
 
   constructor() {

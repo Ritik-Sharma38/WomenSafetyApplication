@@ -5,6 +5,8 @@ import Tlogin from './Pages/Tlogin';
 import Ssignup from './Pages/Ssignup';
 import Ssform from './Pages/Ssform';
 import Loading from './Pages/Loading';
+import Startpage from './Pages/Startpage';
+import Actionpage from './Pages/Actionpage';
 
 export default class Routes extends Component<{}> {
 	render() {
@@ -12,12 +14,13 @@ export default class Routes extends Component<{}> {
 			<Router navigationBarStyle={{ backgroundColor: '#3d5afe' }}>
 		    	<Stack key="root" >
 		    		<Scene key="loading" component={Loading} hideNavBar={true}/>
+		    		<Scene key="startpage" component={Startpage} hideNavBar={true}/>
 		      		<Scene key="fpg" component={Fpg} hideNavBar={true} />
 		          	<Scene key="tlogin" component={Tlogin} title="Login"/>
 				    <Scene key="ssignup" component={Ssignup} title="Signup"/>
 				    <Scene key="ssform" component={Ssform} title="Profile"/>
 				    <Scene key="loading" component={Loading} hideNavBar={true}/>
-		     
+				    <Scene key="actionpage" component={Actionpage} hideNavBar={true}/>		     
 		    	</Stack>
 		  	</Router>
 		)	
