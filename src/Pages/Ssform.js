@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet,StatusBar,TextInput,TouchableOpacity} from 'react-native';
 import {Actions} from 'react-native-router-flux';
+import firebase from 'react-native-firebase';
 export default class Logo extends Component<{}> {
-	   _call(){
+	   _call=()=>{
   alert('Server Not Found ERROR 404');
 }
 	state={
@@ -15,11 +16,41 @@ export default class Logo extends Component<{}> {
 		rpersonN1p:'',
 		rpersonN2:'',
 		rpersonN2p:'',
+		errorMessage: null,
 	}
+
+	writeUserData=()=>{
+		var node=this.state.name;
+    firebase.database().ref('Users/' + node).push({
+        name: this.state.name,
+        age: this.state.age,
+        gender: this.state.gender,
+        address: this.state.address,
+        phone: this.state.phone,
+        rpersonN1: this.state.rpersonN1,
+    	rpersonN1p: this.state.rpersonN1p,
+    	rpersonN2: this.state.rpersonN2,
+    	rpersonN2p: this.state.rpersonN2p,
+
+        
+    }).then((data)=>{
+        //success callback
+        console.log('data ' , data)
+    }).catch((error)=>{
+        //error callback
+        console.log('error ' , error)
+    })
+
+    alert("data written")
+}
 
 	render() {
 		return(
 			<View style={styles.container}>
+			{this.state.errorMessage &&
+          <Text style={{ color: 'red' }}>
+            {this.state.errorMessage}
+          </Text>}
 				<TextInput style={styles.inputBox}
 				  placeholder="Name"
 				  placeholderTextColor = "#ffffff"
@@ -79,7 +110,7 @@ export default class Logo extends Component<{}> {
           			value={this.state.rpersonN2p}
 				  />
 
-				  <TouchableOpacity style={styles.button} onPress={this._call}>
+				  <TouchableOpacity style={styles.button} onPress={this.writeUserData}>
 				  <Text style={styles.buttonText}>Complete SignUp</Text>
 				  </TouchableOpacity>
 	

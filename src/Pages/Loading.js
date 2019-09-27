@@ -44,7 +44,7 @@ export default class Loading extends React.Component {
   }
 
   call2(){
-    Actions.startpage()
+    Actions.ssform()
   }
 
   constructor() {
@@ -71,7 +71,7 @@ export default class Loading extends React.Component {
     return (
       <View style={styles.container}>
       <StatusBar backgroundColor="#000000" barStyle="light-content" />
-      <Image
+      <ImageLoader
                 style={{ flex:2, resizeMode: 'center'}}
                 source={require('../images/Logo.png')}/> 
        <Text style={{fontSize: 30, color : 'rgba(255, 255, 255, 0.7)'}}>Loading</Text>

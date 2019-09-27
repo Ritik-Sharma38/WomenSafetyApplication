@@ -10,7 +10,7 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Startpage extends Component {
     callHome() {
-      Actions.actionPage()
+      Actions.actionpage()
     }
     render() {
         return (

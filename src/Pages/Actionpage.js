@@ -7,14 +7,14 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default class Actionpage extends Component {
 
     render () {
         return (
             <TouchableOpacity style={styles.actionBtn}>
-              <Icon name={"chevron-right"}  size={10} color="#01a699" />
+              <Text>Hello</Text>
             </TouchableOpacity>
         );
     }
