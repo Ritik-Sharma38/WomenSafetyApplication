@@ -44,8 +44,9 @@ export default class Startpage extends Component {
 
 const styles = StyleSheet.create({
  sectionContainer: {
-    marginTop: 32,
+    marginTop: 90,
     paddingHorizontal: 24,
+    justifyContent: 'center',
   },
 sectionTitle: {
   fontSize: 24,
@@ -62,8 +63,9 @@ imageLogo: {
   height: '25%',
 },
 btn: {
-  width: '100%',
-  alignItems: 'center',
+  padding: 15,
+  left: 80,
+  width: '50%',
   justifyContent: 'center',
 },
 highlight: {
