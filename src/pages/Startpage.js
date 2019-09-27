@@ -5,6 +5,7 @@ import {
   Text,
   Image,
   Button,
+  SafeAreaView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
@@ -15,18 +16,20 @@ export default class Startpage extends Component {
     }
     render() {
         return (
-          <View style={styles.sectionContainer}>
-            <Image
-              source={require('../images/logo.png')}
-              style={styles.imageLogo}
-            />
-            <Text style={styles.sectionTitle} >
-              #womenSafety
-            </Text>
-            <Text style={styles.sectionDescription}>
-              For a long time, we have been asking our women to "cover themselves up", to "stay in their limits" or "ignore" cases of harassment.
-              It's now reached a tipping point and these age-old methods are proving to be ineffective.
-            </Text>
+          <SafeAreaView>
+            <View style={styles.sectionContainer}>
+              <Image
+                source={require('../images/logo.png')}
+                style={styles.imageLogo}
+              />
+              <Text style={styles.sectionTitle} >
+                #womenSafety
+              </Text>
+              <Text style={styles.sectionDescription}>
+                For a long time, we have been asking our women to "cover themselves up", to "stay in their limits" or "ignore" cases of harassment.
+                It's now reached a tipping point and these age-old methods are proving to be ineffective.
+              </Text>
+            </View>
             <View style={styles.btn}>
               <Button
                 title="Enter"
@@ -34,7 +37,7 @@ export default class Startpage extends Component {
               >
               </Button>
             </View>
-         </View>
+          </SafeAreaView>
         );
     }
 }
@@ -59,8 +62,8 @@ imageLogo: {
   height: '25%',
 },
 btn: {
-  padding: 10,
-  alignContent: 'center',
+  width: '100%',
+  alignItems: 'center',
   justifyContent: 'center',
 },
 highlight: {
