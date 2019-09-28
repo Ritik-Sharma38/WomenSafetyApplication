@@ -22,7 +22,7 @@ export default class Startpage extends Component {
 
     render() {
         return (
-          <SafeAreaView>
+          <SafeAreaView style={{ backgroundColor: '#3d5afe', flex: 1}}>
             <TouchableOpacity onPress={this.logout} >
             <Image style={{resizeMode: 'contain', width: 30, height: 30, alignSelf:'flex-end'}}
                 source={require('../images/logout.png')}
@@ -43,6 +43,7 @@ export default class Startpage extends Component {
             </View>
             <View style={styles.btn}>
               <Button
+                color='black'
                 title="Enter"
                 onPress={this.callHome}
               >

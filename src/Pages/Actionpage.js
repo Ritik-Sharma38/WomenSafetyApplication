@@ -67,7 +67,7 @@ export default class Actionpage extends Component {
 
     render () {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{ backgroundColor: '#3d5afe', flex: 1}}>
                 <TouchableOpacity style={styles.mainContainer} onPress={this.help}>
                     <Image
                         source={require('../images/sos.png')}
