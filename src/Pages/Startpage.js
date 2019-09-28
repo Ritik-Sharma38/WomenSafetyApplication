@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'react-native-firebase';
 import {
   StyleSheet,
   View,
@@ -54,7 +55,7 @@ export default class Startpage extends Component {
 
 const styles = StyleSheet.create({
  sectionContainer: {
-    marginTop: 90,
+    padding: 20,
     paddingHorizontal: 24,
     justifyContent: 'center',
   },
