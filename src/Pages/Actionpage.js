@@ -82,11 +82,12 @@ export default class Actionpage extends Component {
 
 const styles = StyleSheet.create({
 mainContainer: {
-    top: 10,
     justifyContent: 'center',
     alignItems: 'center',
 },
 sosImg: {
     resizeMode: 'center',
+    width: '100%',
+    height: '100%',
 },
 });

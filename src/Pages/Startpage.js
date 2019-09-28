@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'react-native-firebase';
 import {
   StyleSheet,
   View,
@@ -6,19 +7,30 @@ import {
   Image,
   Button,
   SafeAreaView,
+  TouchableOpacity,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Startpage extends Component {
     callHome() {
-      Actions.actionPage()
+      Actions.actionpage()
     }
+    logout(){
+      firebase.auth().signOut();
+      Actions.fpg()
+    }
+
     render() {
         return (
           <SafeAreaView>
+            <TouchableOpacity onPress={this.logout} >
+            <Image style={{resizeMode: 'contain', width: 30, height: 30, alignSelf:'flex-end'}}
+                source={require('../images/logout.png')}
+              />
+            </TouchableOpacity>
             <View style={styles.sectionContainer}>
               <Image
-                source={require('../images/logo.png')}
+                source={require('../images/Logo.png')}
                 style={styles.imageLogo}
               />
               <Text style={styles.sectionTitle} >
@@ -43,7 +55,7 @@ export default class Startpage extends Component {
 
 const styles = StyleSheet.create({
  sectionContainer: {
-    marginTop: 90,
+    padding: 20,
     paddingHorizontal: 24,
     justifyContent: 'center',
   },
