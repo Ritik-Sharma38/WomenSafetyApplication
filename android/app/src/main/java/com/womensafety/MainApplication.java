@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
 import io.invertase.firebase.storage.RNFirebaseStoragePackage;
+import com.tkporter.sendsms.SendSMSPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -29,9 +30,10 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-           packages.add(new RNFirebaseAuthPackage());
-            packages.add(new RNFirebaseDatabasePackage());
-        packages.add(new RNFirebaseStoragePackage());
+          packages.add(new RNFirebaseAuthPackage());
+          packages.add(new RNFirebaseDatabasePackage());
+          packages.add(new RNFirebaseStoragePackage());
+          packages.add(new DirectSmsPackage());
           return packages;
         }
 
