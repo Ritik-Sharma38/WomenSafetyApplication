@@ -10,6 +10,7 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
+import com.tkporter.sendsms.SendSMSPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           packages.add(new RNFirebaseDatabasePackage());
+          packages.add(new DirectSmsPackage());
           return packages;
         }
 

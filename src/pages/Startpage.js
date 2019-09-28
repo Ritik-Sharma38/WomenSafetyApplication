@@ -7,7 +7,6 @@ import {
   Button,
   SafeAreaView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
 
 export default class Startpage extends Component {
