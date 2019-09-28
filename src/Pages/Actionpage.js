@@ -1,4 +1,6 @@
+
 import React, { Component } from 'react';
+import firebase from 'react-native-firebase';
 import {
   StyleSheet,
   View,
@@ -6,29 +8,56 @@ import {
   Image,
   Button,
   TouchableOpacity,
+  SafeAreaView,
+  Alert,
 } from 'react-native';
-
 
 export default class Actionpage extends Component {
 
+    state = {
+        categories : [],
+        prior: []
+    }
+
+    componentDidMount() {
+    let cat = firebase.database().ref('violence_cat');
+    cat.on('value', snapshot => {
+            let data = snapshot.val();
+            let names = Object.keys(data)
+            let prior = Object.values(data)
+            this.setState({categories : names, prior : prior})
+    })
+
+
+}
+
+call= () => {
+ var date = new Date().getDate();
+}
+
     render () {
         return (
-            <TouchableOpacity style={styles.actionBtn}>
-              <Text>Hello</Text>
-            </TouchableOpacity>
+            <SafeAreaView style={styles.mainContainer}>
+                <TouchableOpacity onPress={this.call}>
+                    <Image
+                        source={require('../images/sos.png')}
+                        style={styles.sosImg}
+                    >
+                    </Image>
+                    <Text>{this.state.categories}</Text>
+                </TouchableOpacity>
+            </SafeAreaView>
         );
     }
 }
 
 const styles = StyleSheet.create({
-actionBtn: {
-  borderWidth:1,
-  borderColor:'rgba(0,0,0,0.2)',
-  alignItems:'center',
-  justifyContent:'center',
-  width:100,
-  height:100,
-  backgroundColor:'#fff',
-  borderRadius:50,
+mainContainer: {
+    top: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
+sosImg: {
+    resizeMode: 'center',
 },
 });
