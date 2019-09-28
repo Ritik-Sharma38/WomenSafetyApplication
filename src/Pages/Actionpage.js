@@ -44,7 +44,7 @@ export default class Actionpage extends Component {
     message = () => {
         // logic
         SendSMS.send({
-		body: 'Urgent! Need help, I am in danger. : ${this.state.latitude}',
+		body: 'Urgent! Need help, I am in danger.',
 		recipients: ['9561365230'],
 		successTypes: ['sent', 'queued'],
 		allowAndroidSendWithoutReadPermission: true

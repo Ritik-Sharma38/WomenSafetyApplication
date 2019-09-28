@@ -15,7 +15,6 @@ _call2(){
 }
   render() {
     return(
-      <SafeAreaView>
         <View style={styles.container}>
           <Logo type="Login"/>
           <Tlform/>
@@ -31,14 +30,13 @@ _call2(){
             <TouchableOpacity onPress={this._call2}><Text style={styles.sign}> Signup</Text></TouchableOpacity>
           </View>
         </View>
-      </SafeAreaView>
-
       );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+   flexGrow: 1,
    backgroundColor: '#3d5afe',
    alignItems :'center',
    justifyContent : 'center',
