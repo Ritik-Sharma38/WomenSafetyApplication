@@ -187,6 +187,7 @@ dependencies {
     // firebase
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
     implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation "com.google.firebase:firebase-database:17.0.0"
 
     // FirebaseUI for Firebase Realtime Database
     implementation 'com.firebaseui:firebase-ui-database:6.0.2'
