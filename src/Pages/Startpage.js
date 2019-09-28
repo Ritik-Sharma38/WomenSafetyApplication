@@ -7,12 +7,11 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import { Actions } from 'react-native-router-flux';
-import firebase from 'react-native-firebase';
+import {Actions} from 'react-native-router-flux';
 
 export default class Startpage extends Component {
     callHome() {
-      Actions.actionpage()
+      Actions.location()
     }
     logout(){
       firebase.auth().signOut();

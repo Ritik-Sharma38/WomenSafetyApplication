@@ -7,6 +7,7 @@ import Ssform from './Pages/Ssform';
 import Loading from './Pages/Loading';
 import Startpage from './Pages/Startpage';
 import Actionpage from './Pages/Actionpage';
+import Location from './Pages/Location';
 
 export default class Routes extends Component<{}> {
 	render() {
@@ -20,7 +21,8 @@ export default class Routes extends Component<{}> {
 				    <Scene key="ssignup" component={Ssignup} title="Signup"/>
 				    <Scene key="ssform" component={Ssform} title="Profile"/>
 				    <Scene key="loading" component={Loading} hideNavBar={true}/>
-				    <Scene key="actionpage" component={Actionpage} hideNavBar={true}/>		     
+				    <Scene key="actionpage" component={Actionpage} hideNavBar={true}/>	
+				    <Scene key="location" component={Location} hideNavBar={true}/>			     
 		    	</Stack>
 		  	</Router>
 		)	

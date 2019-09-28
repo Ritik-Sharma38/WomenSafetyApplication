@@ -14,12 +14,14 @@ export default class Logo extends Component<{}> {
 		rpersonN1p:'',
 		rpersonN2:'',
 		rpersonN2p:'',
+		distance:'',
 		errorMessage: null,
 	}
 
 	writeUserData=()=>{
+		var random=Math.floor((Math.random() * 50) + 1);
 		var node=this.state.name;
-    firebase.database().ref('Users/' + node).push({
+    firebase.database().ref('UsersList/'+ node).set({
         name: this.state.name,
         age: this.state.age,
         gender: this.state.gender,
@@ -29,7 +31,7 @@ export default class Logo extends Component<{}> {
     	rpersonN1p: this.state.rpersonN1p,
     	rpersonN2: this.state.rpersonN2,
     	rpersonN2p: this.state.rpersonN2p,
-
+    	distance: random,
         
     }).then((data)=>{
         //success callback
