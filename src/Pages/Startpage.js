@@ -5,38 +5,41 @@ import {
   Text,
   Image,
   Button,
+  SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
 export default class Startpage extends Component {
     callHome() {
-      Actions.location()
+      Actions.actionpage()
     }
     logout(){
       firebase.auth().signOut();
       Actions.fpg()
     }
+
     render() {
         return (
-          <View>
-          <TouchableOpacity onPress={this.logout} >
-          <Image style={{resizeMode: 'contain',  width: '28%',  height: '28%', alignSelf:'flex-end'}}
-              source={require('../images/logout.png')}
-            />
+          <SafeAreaView>
+            <TouchableOpacity onPress={this.logout} >
+            <Image style={{resizeMode: 'contain', width: 30, height: 30, alignSelf:'flex-end'}}
+                source={require('../images/logout.png')}
+              />
             </TouchableOpacity>
-          <View style={styles.sectionContainer}>
-            <Image
-              source={require('../images/Logo.png')}
-              style={styles.imageLogo}
-            />
-            <Text style={styles.sectionTitle} >
-              #womenSafety
-            </Text>
-            <Text style={styles.sectionDescription}>
-              For a long time, we have been asking our women to "cover themselves up", to "stay in their limits" or "ignore" cases of harassment.
-              It's now reached a tipping point and these age-old methods are proving to be ineffective.
-            </Text>
+            <View style={styles.sectionContainer}>
+              <Image
+                source={require('../images/Logo.png')}
+                style={styles.imageLogo}
+              />
+              <Text style={styles.sectionTitle} >
+                #womenSafety
+              </Text>
+              <Text style={styles.sectionDescription}>
+                For a long time, we have been asking our women to "cover themselves up", to "stay in their limits" or "ignore" cases of harassment.
+                It's now reached a tipping point and these age-old methods are proving to be ineffective.
+              </Text>
+            </View>
             <View style={styles.btn}>
               <Button
                 title="Enter"
@@ -44,16 +47,16 @@ export default class Startpage extends Component {
               >
               </Button>
             </View>
-         </View>
-         </View>
+          </SafeAreaView>
         );
     }
 }
 
 const styles = StyleSheet.create({
  sectionContainer: {
-    marginTop: 32,
+    marginTop: 90,
     paddingHorizontal: 24,
+    justifyContent: 'center',
   },
 sectionTitle: {
   fontSize: 24,
@@ -65,14 +68,14 @@ sectionDescription: {
   fontWeight: '400',
 },
 imageLogo: {
-  width: 150,
-  height: 111,
-  alignSelf: 'center'
-  },
-
+  resizeMode: 'contain',
+  width: '25%',
+  height: '25%',
+},
 btn: {
-  padding: 10,
-  alignContent: 'center',
+  padding: 15,
+  left: 80,
+  width: '50%',
   justifyContent: 'center',
 },
 highlight: {

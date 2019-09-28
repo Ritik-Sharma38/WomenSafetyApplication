@@ -133,12 +133,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-<<<<<<< HEAD
-          multiDexEnabled true
-=======
         resConfigs "en"
         multiDexEnabled true
->>>>>>> master
     }
     splits {
         abi {
@@ -207,8 +203,6 @@ dependencies {
 
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:6.0.2'
-
-    implementation project(':react-native-immediate-phone-call')
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
