@@ -90,21 +90,18 @@ export default class Logo extends Component<{}> {
 				  />
 				  <TextInput style={styles.inputBox}
 				  placeholder="Phone Number"
-				  secureTextEntry={true}
 				  placeholderTextColor = "#ffffff"
 				  onChangeText={rpersonN1p => this.setState({ rpersonN1p })}
           			value={this.state.rpersonN1p}
 				  />
 				  <TextInput style={styles.inputBox}
 				  placeholder="Relation person name"
-				  secureTextEntry={true}
 				  placeholderTextColor = "#ffffff"
 				  onChangeText={rpersonN2 => this.setState({ rpersonN2 })}
           			value={this.state.rpersonN2}
 				  />
 				  <TextInput style={styles.inputBox}
 				  placeholder="Phone number"
-				  secureTextEntry={true}
 				  placeholderTextColor = "#ffffff"
 				  onChangeText={rpersonN2p => this.setState({ rpersonN2p })}
           			value={this.state.rpersonN2p}
