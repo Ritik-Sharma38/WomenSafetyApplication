@@ -8,8 +8,18 @@ import {
   Button,
   SafeAreaView,
   TouchableOpacity,
+  Linking,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+
+// var name, age, address, distance;
+
+// // const user_info = {
+// //   name : user.name,
+// //   age : user.age,
+// //   address : user.address,
+// //   distance : user.distance,
+// // }
 
 export default class Startpage extends Component {
     callHome() {
@@ -22,7 +32,7 @@ export default class Startpage extends Component {
 
     render() {
         return (
-          <SafeAreaView style={{ backgroundColor: '#3d5afe', flex: 1}}>
+          <SafeAreaView style={{ backgroundColor: 'white', flex: 1}}>
             <TouchableOpacity onPress={this.logout} >
             <Image style={{resizeMode: 'contain', width: 30, height: 30, alignSelf:'flex-end'}}
                 source={require('../images/logout.png')}
@@ -33,7 +43,7 @@ export default class Startpage extends Component {
                 source={require('../images/Logo.png')}
                 style={styles.imageLogo}
               />
-              <Text style={styles.sectionTitle} >
+              <Text style={styles.sectionTitle} onPress={() => Linking.openURL('https://github.com/sr1jan/womenSafetyApp')} >  
                 #womenSafety
               </Text>
               <Text style={styles.sectionDescription}>
@@ -50,6 +60,7 @@ export default class Startpage extends Component {
               </Button>
             </View>
           </SafeAreaView>
+
         );
     }
 }

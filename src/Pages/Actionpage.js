@@ -15,30 +15,37 @@ import {
 import { Actions } from 'react-native-router-flux';
 import SendSMS from 'react-native-sms'
 
+import Geolocation from 'react-native-geolocation-service';
+
+const user = firebase.auth().currentUser;
+
 export default class Actionpage extends Component {
 
-    // state = {
-    //     categories : [],
-    //     prior: []
-    // }
-
-    // componentDidMount() {
-	// 	let cat = firebase.database().ref('violence_cat');
-	// 	cat.on('value', snapshot => {
-    //         let data = snapshot.val();
-    //         let names = Object.keys(data)
-    //         let prior = Object.values(data)
-    //         this.setState({categories : names, prior : prior})
-    //         console.log(this.state.categories)
-    //         console.log(this.state.prior)
-	// 	});
-    // }
+     state = {
+      latitude: null,
+      longitude: null,
+      error:null,
+    }
+    componentDidMount(){
+          Geolocation.getCurrentPosition(  
+       (position) => {
+         console.log(position);
+         this.setState({
+           latitude: position.coords.latitude,
+           longitude: position.coords.longitude,
+           error: null,
+         });
+       },
+       (error) => this.setState({ error: error.message }),
+       { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 },
+     );
+   }
 
     message = () => {
         // logic
         SendSMS.send({
 		body: 'Urgent! Need help, I am in danger.',
-		recipients: ['8692990864'],
+		recipients: ['9561365230'],
 		successTypes: ['sent', 'queued'],
 		allowAndroidSendWithoutReadPermission: true
         }, (completed, cancelled, error) => {
@@ -49,7 +56,7 @@ export default class Actionpage extends Component {
     }
 
     phoneCall = () => {
-        let phoneNumber = 8692990864;
+        let phoneNumber = 9819303578;
         Linking.openURL(`tel:${phoneNumber}`)
     }
 
