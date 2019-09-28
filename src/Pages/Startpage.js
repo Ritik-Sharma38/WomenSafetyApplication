@@ -11,6 +11,15 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
+// var name, age, address, distance;
+
+// // const user_info = {
+// //   name : user.name,
+// //   age : user.age,
+// //   address : user.address,
+// //   distance : user.distance,
+// // }
+
 export default class Startpage extends Component {
     callHome() {
       Actions.actionpage()
@@ -22,7 +31,7 @@ export default class Startpage extends Component {
 
     render() {
         return (
-          <SafeAreaView style={{ backgroundColor: '#3d5afe', flex: 1}}>
+          <SafeAreaView style={{ backgroundColor: 'white'}}>
             <TouchableOpacity onPress={this.logout} >
             <Image style={{resizeMode: 'contain', width: 30, height: 30, alignSelf:'flex-end'}}
                 source={require('../images/logout.png')}

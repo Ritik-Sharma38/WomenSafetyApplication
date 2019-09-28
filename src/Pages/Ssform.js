@@ -21,7 +21,8 @@ export default class Logo extends Component<{}> {
 	writeUserData=()=>{
 		var random=Math.floor((Math.random() * 50) + 1);
 		var node=this.state.name;
-    firebase.database().ref('UsersList/'+ node).set({
+		const user = firebase.auth().currentUser;
+    firebase.database().ref('UsersList/'+ user.uid).set({
         name: this.state.name,
         age: this.state.age,
         gender: this.state.gender,
