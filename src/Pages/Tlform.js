@@ -5,7 +5,7 @@ import firebase from 'react-native-firebase'
 
 export default class Tform extends Component<{}> {
 call2(){
-	Actions.fpg()
+	Actions.startpage()
 }
 
 state = { email: '', password: '', errorMessage: null }

@@ -3,9 +3,7 @@ import { Text, View, StyleSheet,StatusBar,TextInput,TouchableOpacity} from 'reac
 import {Actions} from 'react-native-router-flux';
 import firebase from 'react-native-firebase';
 export default class Logo extends Component<{}> {
-	   _call=()=>{
-  alert('Server Not Found ERROR 404');
-}
+
 	state={
 		name:'',
 		age:'',
@@ -41,7 +39,7 @@ export default class Logo extends Component<{}> {
         console.log('error ' , error)
     })
 
-    alert("data written")
+    Actions.startpage()
 }
 
 	render() {

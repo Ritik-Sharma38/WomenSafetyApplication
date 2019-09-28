@@ -5,15 +5,27 @@ import {
   Text,
   Image,
   Button,
+  TouchableOpacity,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import firebase from 'react-native-firebase';
 
 export default class Startpage extends Component {
     callHome() {
       Actions.actionpage()
     }
+    logout(){
+      firebase.auth().signOut();
+      Actions.fpg()
+    }
     render() {
         return (
+          <View>
+          <TouchableOpacity onPress={this.logout} >
+          <Image style={{resizeMode: 'contain',  width: '28%',  height: '28%', alignSelf:'flex-end'}}
+              source={require('../images/logout.png')}
+            />
+            </TouchableOpacity>
           <View style={styles.sectionContainer}>
             <Image
               source={require('../images/Logo.png')}
@@ -34,6 +46,7 @@ export default class Startpage extends Component {
               </Button>
             </View>
          </View>
+         </View>
         );
     }
 }
@@ -53,10 +66,11 @@ sectionDescription: {
   fontWeight: '400',
 },
 imageLogo: {
-  resizeMode: 'contain',
-  width: '25%',
-  height: '25%',
-},
+  width: 150,
+  height: 111,
+  alignSelf: 'center'
+  },
+
 btn: {
   padding: 10,
   alignContent: 'center',

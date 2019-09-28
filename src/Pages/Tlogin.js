@@ -8,7 +8,7 @@ import {Actions} from 'react-native-router-flux';
 export default class Loginn extends Component<{}> {
   
 _call(){
-  Actions.fpg()
+  alert("A password reset link has been to your email ID")
 }
 _call2(){
   Actions.ssignup()
@@ -21,7 +21,7 @@ _call2(){
          <Tlform/>
          <TouchableOpacity>
                 <Button 
-                  onPress={this._call2}
+                  onPress={this._call}
                   title="Forget password"
                   color='rgba(255, 255, 255, 0.1)'
                  />
